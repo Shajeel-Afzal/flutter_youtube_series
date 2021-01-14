@@ -29,11 +29,15 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Login Screen")),
       body: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/shajeel.jpg", height: 250, width: 250),
+            Image.asset(
+              "assets/images/shajeel.jpg",
+              height: 250,
+              width: 250,
+            ),
             Text("Welcome to my App!"),
             TextField(),
             TextField(),
