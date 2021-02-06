@@ -29,36 +29,65 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Login Screen")),
       body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/images/shajeel.jpg",
-              height: 250,
-              width: 250,
-            ),
-            Text("Welcome to my App!"),
-            TextField(),
-            TextField(),
-            Row(
-              mainAxisSize: MainAxisSize.max,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Login"),
+                CircleAvatar(
+                  radius: 100,
+                  backgroundImage: AssetImage("assets/images/shajeel.jpg"),
                 ),
                 SizedBox(
-                  width: 18,
+                  height: 20,
                 ),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: Text("Signup"),
-                )
+                Text("Welcome to my App!"),
+                SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.email),
+                    border: OutlineInputBorder(),
+                    hintText: "Email",
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.lock),
+                    border: OutlineInputBorder(),
+                    hintText: "Password",
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Login"),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    OutlinedButton(
+                      onPressed: () {},
+                      child: Text("Signup"),
+                    )
+                  ],
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
